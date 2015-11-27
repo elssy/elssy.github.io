@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Complex Number</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    
+    
+    <script type="text/javascript" src ="complex.js"></script>
+    
+        <script type="text/javascript">
+        //validating input
+            function validate(a, b, c, d) {
+              if ( isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d)) {
+                return false;
+              }
+
+              return true;
+            }
+          //fetching the result of the addition
+            function sum() {
+              var a = Number(document.getElementById("real1").value);
+              var b = Number(document.getElementById("real2").value);
+              var c = Number(document.getElementById("imag1").value);
+              var d = Number(document.getElementById("imag2").value);
+
+              if (!validate(a, b, c, d)) {
+                alert("Please make sure you have only numerical values as input");
+                return;
+              }
+
+              var e = new Complex(a, c),
+                  f =  new Complex(b, d);
+
+              var g = e.sum(f);
+              var result = g.re + ' + ' + g.im + 'i';
+              document.getElementById('result').value = result;
+
+            }
+
+            //fetching the result of the difference
+            function difference() {
+              var a = Number(document.getElementById("real1").value);
+              var b = Number(document.getElementById("real2").value);
+              var c = Number(document.getElementById("imag1").value);
+              var d = Number(document.getElementById("imag2").value);
+
+              if (!validate(a, b, c, d)) {
+                alert("Please make sure you have only numerical values as input");
+                return;
+              }
+
+              var e = new Complex(a, c),
+                  f =  new Complex(b, d);
+
+              var g = e.difference(f);
+              var result = g.re + ' + ' + g.im + 'i';
+              document.getElementById('result').value = result;
+
+            }
+
+            //fetching the result of the multiplication
+            function multiply() {
+              var a = Number(document.getElementById("real1").value);
+              var b = Number(document.getElementById("real2").value);
+              var c = Number(document.getElementById("imag1").value);
+              var d = Number(document.getElementById("imag2").value);
+
+              if (!validate(a, b, c, d)) {
+                alert("Please make sure you have only numerical values as input");
+                return;
+              }
+
+              var e = new Complex(a, c),
+                  f =  new Complex(b, d);
+
+              var g = e.multiply(f);
+              var result = g.re + ' + ' + g.im + 'i';
+              document.getElementById('result').value = result;
+
+            }
+
+            function division() {
+              var a = Number(document.getElementById("real1").value);
+              var b = Number(document.getElementById("real2").value);
+              var c = Number(document.getElementById("imag1").value);
+              var d = Number(document.getElementById("imag2").value);
+
+              if (!validate(a, b, c, d)) {
+                alert("Please make sure you have only numerical values as input");
+                return;
+              }
+
+              var e = new Complex(a, c),
+                  f =  new Complex(b, d);
+
+              var g = e.division(f);
+              var result = g.re + ' + ' + g.im + 'i';
+              document.getElementById('result').value = result;
+
+            }
+                
+        </script>
+</head>
+<body>
+   <div class="top">
+      <h3>Complex Number Calculator</h3>
+
+        <a href="https://github.com/elssy/Complex-Number/blob/master/complex.js">Code</a> 
+        <a href="https://github.com/elssy/Complex-Number/blob/master/testing/jasmine/spec/ComplexSpec.js">Unit Tests </a>
+        <a href="http://elssy.github.io/Complex-Number">Complex Number Library</a>
+    </div>
+
+    <div class="rest">
+            <label>First Complex Number &nbsp; &nbsp;&nbsp;</label><input type = "text" class="text" id="real1" placeholder="real">&nbsp;
+            <input type = "text" class="text" id="imag1" placeholder="imaginary"><br/><br/>
+            <label>Second Complex Number</label><input type = "text" class="text" id="real2" placeholder="real">&nbsp;
+            <input type = "text" class="text" id="imag2" placeholder="imaginary"><br/><br><br>
+            <label>Result</label><br><br>
+
+            <textarea id="result" name="result" readonly>
+             
+            </textarea> <br><br>
+
+            <button type="button" class="btn" onclick="sum();">Add</button>
+            <button type="button" class="btn" onclick="difference();">Subtract</button><br><br><br>
+            <button type="button" class="btn"  onclick="multiply();">Multiply</button>
+            <button type="button" class="btn" onclick="division();">Divide</button>
+            
+    </div>
+</body>
+</html>

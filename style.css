@@ -1,0 +1,49 @@
+.top{
+	margin: 20px;
+	height: 100px;
+	width: 97%;
+	background-color: #00b7f5;
+	border-radius: 10px;
+}
+a{
+	float: right;
+	color: white;
+	padding: 20px;
+	font-size: 25px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+h3{
+	float: left;
+	font-size: 40px;
+	
+}
+body{
+	background-color: #e8e8e8;
+}
+
+.rest{
+	text-align: center;
+	margin-top: 40px;
+}
+.btn{
+	height: 40px;
+	width:100px;
+	border-radius: 10px;
+	padding: 10px;
+	background-color: #00b7f5;
+
+}
+
+label{
+	font-size: 20px;
+	padding: 10px;
+	font-family: Arial;
+
+}
+.text{
+	height: 30px;
+	width:150x;
+	border-radius: 5px;
+}
